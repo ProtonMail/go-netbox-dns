@@ -1,0 +1,3467 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "NetBox API",
+        "description": "API to access NetBox",
+        "termsOfService": "https://github.com/netbox-community/netbox",
+        "license": {
+            "name": "Apache v2 License"
+        },
+        "version": "3.4"
+    },
+    "host": "localhost:8001",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/api",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "paths": {
+        "/plugins/netbox-dns/nameservers/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_nameservers_list",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__iew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__niew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__isw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nisw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__empty",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ordering",
+                        "in": "query",
+                        "description": "Which field to use when ordering the results.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "required": [
+                                "count",
+                                "results"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "next": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "previous": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "results": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/NameServer"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "post": {
+                "operationId": "plugins_netbox-dns_nameservers_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_nameservers_bulk_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_nameservers_bulk_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_nameservers_bulk_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugins/netbox-dns/nameservers/{id}/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_nameservers_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_nameservers_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_nameservers_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_nameservers_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this name server.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/nameservers/{id}/zones/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_nameservers_zones",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/NameServer"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this name server.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/records/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_records_list",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "zone",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "managed",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "zone_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__iew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__niew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__isw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nisw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__empty",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__ic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__nic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__iew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__niew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__isw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__nisw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__ie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__nie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "value__empty",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "zone__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "zone_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ordering",
+                        "in": "query",
+                        "description": "Which field to use when ordering the results.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "required": [
+                                "count",
+                                "results"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "next": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "previous": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "results": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Record"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "post": {
+                "operationId": "plugins_netbox-dns_records_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableRecord"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_records_bulk_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableRecord"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_records_bulk_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableRecord"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_records_bulk_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugins/netbox-dns/records/{id}/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_records_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_records_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableRecord"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_records_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableRecord"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_records_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this record.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/views/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_views_list",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__iew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__niew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__isw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nisw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__empty",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ordering",
+                        "in": "query",
+                        "description": "Which field to use when ordering the results.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "required": [
+                                "count",
+                                "results"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "next": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "previous": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "results": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/View"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "post": {
+                "operationId": "plugins_netbox-dns_views_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_views_bulk_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_views_bulk_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_views_bulk_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugins/netbox-dns/views/{id}/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_views_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_views_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_views_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_views_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this view.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/views/{id}/views/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_views_views",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/View"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this view.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/zones/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_zones_list",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "nameservers",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "active",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nic",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__iew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__niew",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__isw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nisw",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__ie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__nie",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name__empty",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "nameservers__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "created__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__lt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_updated__gt",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "view_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ordering",
+                        "in": "query",
+                        "description": "Which field to use when ordering the results.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The initial index from which to return the results.",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "required": [
+                                "count",
+                                "results"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "next": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "previous": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "x-nullable": true
+                                },
+                                "results": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Zone"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "post": {
+                "operationId": "plugins_netbox-dns_zones_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableZone"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_zones_bulk_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableZone"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_zones_bulk_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableZone"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_zones_bulk_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugins/netbox-dns/zones/{id}/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_zones_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "put": {
+                "operationId": "plugins_netbox-dns_zones_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableZone"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "patch": {
+                "operationId": "plugins_netbox-dns_zones_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WritableZone"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "delete": {
+                "operationId": "plugins_netbox-dns_zones_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this zone.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/zones/{id}/nameservers/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_zones_nameservers",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this zone.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugins/netbox-dns/zones/{id}/records/": {
+            "get": {
+                "operationId": "plugins_netbox-dns_zones_records",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Zone"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugins"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this zone.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "Zone": {
+            "required": [
+                "name",
+                "soa_ttl",
+                "soa_rname",
+                "soa_refresh",
+                "soa_retry",
+                "soa_expire",
+                "soa_minimum"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "view": {
+                    "$ref": "#/definitions/NestedView"
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "nameservers": {
+                    "description": "Nameservers for the zone",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedNameServer"
+                    }
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "reserved",
+                        "deprecated",
+                        "parked"
+                    ]
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "default_ttl": {
+                    "title": "Default TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_ttl": {
+                    "title": "SOA TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_mname": {
+                    "$ref": "#/definitions/NestedNameServer"
+                },
+                "soa_rname": {
+                    "title": "SOA RName",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "soa_serial": {
+                    "title": "SOA Serial",
+                    "type": "integer",
+                    "maximum": 4294967295,
+                    "minimum": 1,
+                    "x-nullable": true
+                },
+                "soa_serial_auto": {
+                    "title": "Generate SOA Serial",
+                    "description": "Automatically generate the SOA Serial field",
+                    "type": "boolean"
+                },
+                "soa_refresh": {
+                    "title": "SOA Refresh",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_retry": {
+                    "title": "SOA Retry",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_expire": {
+                    "title": "SOA Expire",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_minimum": {
+                    "title": "SOA Minimum TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "WritableZone": {
+            "required": [
+                "name",
+                "view",
+                "soa_ttl",
+                "soa_mname",
+                "soa_rname",
+                "soa_refresh",
+                "soa_retry",
+                "soa_expire",
+                "soa_minimum"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "view": {
+                    "title": "View",
+                    "type": "integer",
+                    "x-nullable": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "nameservers": {
+                    "description": "Nameservers for the zone",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedNameServer"
+                    }
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "reserved",
+                        "deprecated",
+                        "parked"
+                    ]
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "default_ttl": {
+                    "title": "Default TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_ttl": {
+                    "title": "SOA TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_mname": {
+                    "title": "SOA MName",
+                    "type": "integer"
+                },
+                "soa_rname": {
+                    "title": "SOA RName",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "soa_serial": {
+                    "title": "SOA Serial",
+                    "type": "integer",
+                    "maximum": 4294967295,
+                    "minimum": 1,
+                    "x-nullable": true
+                },
+                "soa_serial_auto": {
+                    "title": "Generate SOA Serial",
+                    "description": "Automatically generate the SOA Serial field",
+                    "type": "boolean"
+                },
+                "soa_refresh": {
+                    "title": "SOA Refresh",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_retry": {
+                    "title": "SOA Retry",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_expire": {
+                    "title": "SOA Expire",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "soa_minimum": {
+                    "title": "SOA Minimum TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 1
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "NestedZone": {
+            "description": "Zones served by the authoritative nameserver",
+            "required": [
+                "name"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "view": {
+                    "$ref": "#/definitions/NestedView"
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "reserved",
+                        "deprecated",
+                        "parked"
+                    ]
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            }
+        },
+        "Record": {
+            "required": [
+                "type",
+                "name",
+                "value"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "zone": {
+                    "$ref": "#/definitions/NestedZone"
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "A",
+                        "A6",
+                        "AAAA",
+                        "AFSDB",
+                        "AMTRELAY",
+                        "APL",
+                        "AVC",
+                        "CAA",
+                        "CDNSKEY",
+                        "CDS",
+                        "CERT",
+                        "CNAME",
+                        "CSYNC",
+                        "DHCID",
+                        "DLV",
+                        "DNAME",
+                        "DNSKEY",
+                        "DS",
+                        "EUI48",
+                        "EUI64",
+                        "GPOS",
+                        "HINFO",
+                        "HIP",
+                        "HTTPS",
+                        "IPSECKEY",
+                        "ISDN",
+                        "KEY",
+                        "KX",
+                        "L32",
+                        "L64",
+                        "LOC",
+                        "LP",
+                        "MB",
+                        "MD",
+                        "MF",
+                        "MG",
+                        "MINFO",
+                        "MR",
+                        "MX",
+                        "NAPTR",
+                        "NID",
+                        "NINFO",
+                        "NS",
+                        "NSAP",
+                        "NSAP_PTR",
+                        "NSEC",
+                        "NSEC3",
+                        "NSEC3PARAM",
+                        "NULL",
+                        "NXT",
+                        "OPENPGPKEY",
+                        "PTR",
+                        "PX",
+                        "RP",
+                        "RRSIG",
+                        "RT",
+                        "SIG",
+                        "SMIMEA",
+                        "SOA",
+                        "SPF",
+                        "SRV",
+                        "SSHFP",
+                        "SVCB",
+                        "TA",
+                        "TLSA",
+                        "TXT",
+                        "TYPE0",
+                        "UNSPEC",
+                        "URI",
+                        "WKS",
+                        "X25",
+                        "ZONEMD"
+                    ]
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "string",
+                    "maxLength": 1000,
+                    "minLength": 1
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "inactive"
+                    ]
+                },
+                "ttl": {
+                    "title": "TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 0,
+                    "x-nullable": true
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "managed": {
+                    "title": "Managed",
+                    "type": "boolean"
+                },
+                "disable_ptr": {
+                    "title": "Disable PTR",
+                    "description": "Disable PTR record creation",
+                    "type": "boolean"
+                },
+                "ptr_record": {
+                    "$ref": "#/definitions/NestedRecord"
+                },
+                "address_record": {
+                    "$ref": "#/definitions/NestedRecord"
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "WritableRecord": {
+            "required": [
+                "zone",
+                "type",
+                "name",
+                "value",
+                "address_record"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "zone": {
+                    "title": "Zone",
+                    "type": "integer"
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "A",
+                        "A6",
+                        "AAAA",
+                        "AFSDB",
+                        "AMTRELAY",
+                        "APL",
+                        "AVC",
+                        "CAA",
+                        "CDNSKEY",
+                        "CDS",
+                        "CERT",
+                        "CNAME",
+                        "CSYNC",
+                        "DHCID",
+                        "DLV",
+                        "DNAME",
+                        "DNSKEY",
+                        "DS",
+                        "EUI48",
+                        "EUI64",
+                        "GPOS",
+                        "HINFO",
+                        "HIP",
+                        "HTTPS",
+                        "IPSECKEY",
+                        "ISDN",
+                        "KEY",
+                        "KX",
+                        "L32",
+                        "L64",
+                        "LOC",
+                        "LP",
+                        "MB",
+                        "MD",
+                        "MF",
+                        "MG",
+                        "MINFO",
+                        "MR",
+                        "MX",
+                        "NAPTR",
+                        "NID",
+                        "NINFO",
+                        "NS",
+                        "NSAP",
+                        "NSAP_PTR",
+                        "NSEC",
+                        "NSEC3",
+                        "NSEC3PARAM",
+                        "NULL",
+                        "NXT",
+                        "OPENPGPKEY",
+                        "PTR",
+                        "PX",
+                        "RP",
+                        "RRSIG",
+                        "RT",
+                        "SIG",
+                        "SMIMEA",
+                        "SOA",
+                        "SPF",
+                        "SRV",
+                        "SSHFP",
+                        "SVCB",
+                        "TA",
+                        "TLSA",
+                        "TXT",
+                        "TYPE0",
+                        "UNSPEC",
+                        "URI",
+                        "WKS",
+                        "X25",
+                        "ZONEMD"
+                    ]
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "string",
+                    "maxLength": 1000,
+                    "minLength": 1
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "inactive"
+                    ]
+                },
+                "ttl": {
+                    "title": "TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 0,
+                    "x-nullable": true
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "managed": {
+                    "title": "Managed",
+                    "type": "boolean"
+                },
+                "disable_ptr": {
+                    "title": "Disable PTR",
+                    "description": "Disable PTR record creation",
+                    "type": "boolean"
+                },
+                "ptr_record": {
+                    "title": "PTR record",
+                    "type": "integer",
+                    "x-nullable": true
+                },
+                "address_record": {
+                    "title": "Address record",
+                    "type": "integer"
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "NestedRecord": {
+            "description": "PTR record generated from an address",
+            "required": [
+                "type",
+                "name",
+                "value"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "A",
+                        "A6",
+                        "AAAA",
+                        "AFSDB",
+                        "AMTRELAY",
+                        "APL",
+                        "AVC",
+                        "CAA",
+                        "CDNSKEY",
+                        "CDS",
+                        "CERT",
+                        "CNAME",
+                        "CSYNC",
+                        "DHCID",
+                        "DLV",
+                        "DNAME",
+                        "DNSKEY",
+                        "DS",
+                        "EUI48",
+                        "EUI64",
+                        "GPOS",
+                        "HINFO",
+                        "HIP",
+                        "HTTPS",
+                        "IPSECKEY",
+                        "ISDN",
+                        "KEY",
+                        "KX",
+                        "L32",
+                        "L64",
+                        "LOC",
+                        "LP",
+                        "MB",
+                        "MD",
+                        "MF",
+                        "MG",
+                        "MINFO",
+                        "MR",
+                        "MX",
+                        "NAPTR",
+                        "NID",
+                        "NINFO",
+                        "NS",
+                        "NSAP",
+                        "NSAP_PTR",
+                        "NSEC",
+                        "NSEC3",
+                        "NSEC3PARAM",
+                        "NULL",
+                        "NXT",
+                        "OPENPGPKEY",
+                        "PTR",
+                        "PX",
+                        "RP",
+                        "RRSIG",
+                        "RT",
+                        "SIG",
+                        "SMIMEA",
+                        "SOA",
+                        "SPF",
+                        "SRV",
+                        "SSHFP",
+                        "SVCB",
+                        "TA",
+                        "TLSA",
+                        "TXT",
+                        "TYPE0",
+                        "UNSPEC",
+                        "URI",
+                        "WKS",
+                        "X25",
+                        "ZONEMD"
+                    ]
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "string",
+                    "maxLength": 1000,
+                    "minLength": 1
+                },
+                "status": {
+                    "title": "Status",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "inactive"
+                    ]
+                },
+                "ttl": {
+                    "title": "TTL",
+                    "type": "integer",
+                    "maximum": 2147483647,
+                    "minimum": 0,
+                    "x-nullable": true
+                },
+                "zone": {
+                    "$ref": "#/definitions/NestedZone"
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            }
+        },
+        "NameServer": {
+            "required": [
+                "name"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "zones": {
+                    "description": "Zones served by the authoritative nameserver",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedZone"
+                    },
+                    "readOnly": true
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "NestedNameServer": {
+            "description": "Nameservers for the zone",
+            "required": [
+                "name"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "View": {
+            "required": [
+                "name"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NestedTag"
+                    },
+                    "x-omitempty": true
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
+                "created": {
+                    "title": "Created",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "last_updated": {
+                    "title": "Last updated",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "x-nullable": true
+                },
+                "custom_fields": {
+                    "title": "Custom fields",
+                    "type": "object",
+                    "default": {}
+                }
+            }
+        },
+        "NestedView": {
+            "description": "View the zone belongs to",
+            "required": [
+                "name"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "NestedTag": {
+            "required": [
+                "name",
+                "slug"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "Id",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "format": "uri",
+                    "readOnly": true
+                },
+                "display": {
+                    "title": "Display",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 100,
+                    "minLength": 1
+                },
+                "slug": {
+                    "title": "Slug",
+                    "type": "string",
+                    "format": "slug",
+                    "maxLength": 100,
+                    "minLength": 1
+                },
+                "color": {
+                    "title": "Color",
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{6}$",
+                    "maxLength": 6,
+                    "minLength": 1
+                }
+            }
+        }
+    }
+}
